@@ -1,0 +1,24 @@
+[
+  {
+    "titolo": "Il piccolo principe",
+    "autori": "Antoine de Saint-Exupéry",
+    "descrizione": "Una favola moderna sulla vita, l'amore e l'amicizia.",
+    "copertina": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Le_Petit_Prince_drawing.svg/200px-Le_Petit_Prince_drawing.svg.png",
+    "annoPubblicazione": "1943",
+    "genere": "Narrativa",
+    "annoLetto": "2024",
+    "valutazione": "5",
+    "commento": "Bellissimo e profondo."
+  },
+  {
+    "titolo": "Harry Potter e la Pietra Filosofale",
+    "autori": "J.K. Rowling",
+    "descrizione": "Il primo capitolo della saga magica più famosa del mondo.",
+    "copertina": "https://covers.openlibrary.org/b/id/7984916-L.jpg",
+    "annoPubblicazione": "1997",
+    "genere": "Fantasy",
+    "annoLetto": "2023",
+    "valutazione": "5",
+    "commento": "Magico e coinvolgente."
+  }
+]
