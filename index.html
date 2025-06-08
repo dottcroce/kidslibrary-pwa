@@ -3,14 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids Library</title>
+  <title>Il Mondo dei Libri di Mattia</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
 </head>
-<body>
-  <h1>Benvenuto nella Kids Library</h1>
-  <button onclick="aggiungiLibroLetto()">Aggiungi libro letto</button>
-  <button onclick="aggiungiLibroScritto()">Aggiungi libro scritto</button>
-  <script src="script.js"></script>
+<body class="home-sketch">
+  <h1>📚 IL MONDO DEI LIBRI DI MATTIA 📚</h1>
+  <div class="contenitore">
+    <div class="colonna">
+      <h2>📖 Libri Letti</h2>
+      <div id="scaffali" class="scaffale"></div>
+      <div class="bottoni">
+        <a href="aggiungi_libro_letto.html"><button>➕ Aggiungi Libro Letto</button></a>
+        <a href="libreria.html"><button>🛠️ Modifica Libro Letto</button></a>
+      </div>
+      <div id="schedaLibro"></div>
+    </div>
+    <div class="colonna">
+      <h2>🏠 Libri Scritti</h2>
+      <div class="casetta">
+        <div class="tetto">▲</div>
+        <div class="parete">
+          <div class="pdf">📄</div>
+          <div class="pdf">📄</div>
+        </div>
+      </div>
+      <div class="bottoni">
+        <a href="aggiungi_libro_scritto.html"><button>➕ Aggiungi Libro Scritto</button></a>
+        <a href="scritti.html"><button>🛠️ Modifica Libro Scritto</button></a>
+      </div>
+    </div>
+  </div>
+  <script src="home_libri_letti.js"></script>
 </body>
 </html>

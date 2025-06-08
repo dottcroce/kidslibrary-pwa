@@ -5,7 +5,9 @@ self.addEventListener("install", (event) => {
         "./",
         "./index.html",
         "./style.css",
-        "./script.js",
+        "./main.js",
+        "./form_libri_letti.js",
+        "./aggiungi_libro_letto.html",
         "./manifest.json"
       ]);
     })

@@ -1,9 +1,87 @@
-body {
-  font-family: sans-serif;
+
+body.home-sketch {
+  background: linear-gradient(to right, #f9f6dc, #fbd786);
+  font-family: Comic Sans MS, cursive, sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+h1 {
+  font-size: 2.5em;
+  color: #444;
+  margin-bottom: 40px;
+}
+.contenitore {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.colonna {
+  background: #fff8dc;
+  border-radius: 10px;
   padding: 20px;
-  background: #f0f0f0;
+  width: 45%;
+  min-width: 300px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+.scaffale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+.copertinaHome {
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.copertinaHome:hover {
+  transform: scale(1.1);
+}
+.casetta {
+  border: 2px solid #666;
+  border-radius: 10px;
+  margin: 10px;
+}
+.tetto {
+  font-size: 2em;
+  color: #c0392b;
+}
+.parete {
+  display: flex;
+  justify-content: center;
+  background-color: #ffe0b3;
+  padding: 20px;
+  border-top: 2px solid #c0392b;
+}
+.pdf {
+  font-size: 2em;
+  margin: 0 10px;
+}
+.bottoni {
+  margin-top: 20px;
 }
 button {
-  margin: 10px;
+  background-color: #ffcc00;
+  border: none;
   padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #ffaa00;
+}
+#schedaLibro {
+  text-align: left;
+  margin-top: 20px;
+  background: #ffffffc2;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px #aaa;
 }
