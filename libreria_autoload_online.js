@@ -1,5 +1,24 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  caricaDaRemoto().then(() => mostraLibreria());
+  // Skip autoload if canceled by user
+  if (localStorage.getItem("skipAutoload") === "true") {
+    console.log("⛔ Skip autoload: user cleared library");
+    mostraLibreria();
+    return;
+  }
+  const raw = localStorage.getItem("libriLetti");
+  let esistenti = null;
+  try {
+    esistenti = JSON.parse(raw);
+  } catch (e) {}
+
+  if (!raw || !Array.isArray(esistenti) || esistenti.length === 0) {
+    console.log("📡 Libreria non presente o vuota, carico da remoto...");
+    caricaDaRemoto().then(() => mostraLibreria());
+  } else {
+    console.log("✅ Libreria trovata nel localStorage");
+    mostraLibreria();
+  }
 });
 
 async function caricaDaRemoto() {
@@ -20,6 +39,11 @@ function mostraLibreria() {
   const contenitore = document.getElementById("libreria");
   contenitore.innerHTML = "";
 
+  if (libreria.length === 0) {
+    contenitore.innerHTML = "<p style='text-align:center;'>📭 Nessun libro presente</p>";
+    return;
+  }
+
   libreria.forEach((libro, index) => {
     const img = document.createElement("img");
     img.src = libro.copertina;
@@ -33,13 +57,14 @@ function mostraLibreria() {
 function mostraScheda(libro, index) {
   const scheda = document.getElementById("schedaLibro");
   scheda.innerHTML = `
-    <h3>${libro.titolo}</h3>
-    <img src="${libro.copertina}" alt="Copertina libro">
-    <p><strong>Autore:</strong> ${libro.autori}</p>
-    <p><strong>Anno pubblicazione:</strong> ${libro.annoPubblicazione}</p>
-    <p><strong>Genere:</strong> ${libro.genere}</p>
-    <p><strong>Anno letto:</strong> ${libro.annoLetto}</p>
-    <p><strong>Valutazione:</strong> ${libro.valutazione} ⭐</p>
-    <p><strong>Commento:</strong> ${libro.commento}</p>
+    <div class="scheda">
+      <h3>${libro.titolo}</h3>
+      <img src="${libro.copertina}" alt="${libro.titolo}">
+      <p><strong>Autore:</strong> ${libro.autore}</p>
+      <p><strong>Anno:</strong> ${libro.anno}</p>
+      <p><strong>Genere:</strong> ${libro.genere}</p>
+      <p><strong>Valutazione:</strong> ${"⭐".repeat(libro.valutazione || 0)}</p>
+      <p><strong>Commento:</strong> ${libro.commento}</p>
+    </div>
   `;
 }

@@ -34,5 +34,20 @@
     </div>
   </div>
   <script src="home_libri_letti.js"></script>
+
+<button id="settingsButton" class="main-button">Impostazioni</button>
+
+<div id="settingsModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="closeSettingsModal">&times;</span>
+    <h2>Impostazioni</h2>
+    <button class="modal-button" onclick="location.href='libreria_export_import.html?mode=export'">Esporta libreria</button>
+    <button class="modal-button" onclick="location.href='libreria_export_import.html?mode=import'">Carica libreria</button>
+    <button class="modal-button" onclick="location.href='libreria.html'">Visualizza libreria</button>
+    <button class="modal-button" id="deleteLibraryBtn">🗑️ Cancella libreria</button>
+  </div>
+</div>
+
+  <script src="main.js"></script>
 </body>
 </html>
